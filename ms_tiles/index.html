@@ -19,16 +19,29 @@ body {
 		box-shadow: inset 0 0 10px #222222;
 		margin:0px !important;
 	}
-	.metroPurpleLight {background-color:#9f00a7 !important;}
-	.metroPurple {background-color:#7e3878 !important;}
-	.metroPurpleDark {background-color:#603cba !important;}
+	.metroPurpleLight {background-color:#9f00a7;}
+	.metroPurpleLight:hover {background-color:#8e0096;}
+	.metroPurple {background-color:#7e3878;}
+	.metroPurple:hover {background-color:#6d2767;}
+	.metroPurpleDark {background-color:#603cba;}
+	.metroPurpleDark:hover {background-color:#502ba9;}
 	
-	.metroRed {background-color:#ee1111 !important;}
-	.metroTeal {background-color:#00aba9 !important;}
-	.metroMagenta {background-color:#ff0097 !important;}
-	.metroGreen {background-color:#00a300 !important;}
-	.metroMagenta {background-color:#ff0097 !important;}
-		
+	.metroRed {background-color:#ee1111;}
+	.metroRed:hover {background-color:#dd0000;}
+	.metroTeal {background-color:#00aba9;}
+	.metroTeal:hover {background-color:#009a98;}
+	.metroMagenta {background-color:#ff0097;}
+	.metroMagenta:hover {background-color:#ee0087;}
+	.metroGreen {background-color:#00a300;}
+	.metroGreen:hover {background-color:#009200;}
+	.metroBlue {background-color:#2d89ef;}
+	.metroBlue:hover {background-color:#1c78de;}
+	.tile:hover {-moz-transition:.5s;-o-transition:.5s;
+		-ms-transition:.5s;
+		-moz-transition:.5s;
+		-webkit-transition:.5s;
+		transition:.5s;}
+	
 	.tileColumn {
 		margin:20px;
 		margin-left:40px;
@@ -36,7 +49,7 @@ body {
 		display:inline-block;
 	}
 	.tile {	padding: 5px;
-		background-color:#2d89ef;
+		
 		margin-top:5px;
 		margin-left:5px;
 		margin-bottom:5px;
@@ -60,7 +73,7 @@ body {
 	
 	<div class="tileColumn">
 		
-		<div id="tile1" contextType="image" class="tile tile1x1">
+		<div id="tile1" contextType="image" class="tile tile1x1 metroBlue">
 			<div class="tileContent">TEST</div>
 		</div>
 		<div id="tile2" contextType="weather" class="tile tile1x1 metroPurple">
@@ -78,7 +91,7 @@ body {
 		
 	<div class="tileColumn">
 		
-		<div id="tile5" class="tile tile1x2">
+		<div id="tile5" class="tile tile1x2 metroBlue">
 			<div class="tileContent">TEST</div>
 		</div>
 		
@@ -86,7 +99,7 @@ body {
 			<div class="tileContent">TEST</div>
 		</div>
 		
-		<div id="tile7" class="tile tile2x2">
+		<div id="tile7" class="tile tile2x2 metroBlue">
 			<div class="tileContent">TEST</div>
 		</div>
 	</div>
