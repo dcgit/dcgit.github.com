@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <head>
 	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8"> 
 <link href="https://fonts.googleapis.com/css?family=Metrophobic" rel="stylesheet">
 
 
@@ -58,50 +60,80 @@ body {
 	
 	<div class="tileColumn">
 		
-		<div class="tile tile1x1">
+		<div id="tile1" contextType="image" class="tile tile1x1">
 			<div class="tileContent">TEST</div>
 		</div>
-		<div class="tile tile1x1 metroPurple">
-			<div class="tileContent">TEST</div>
-		</div>
-		
-		<div class="tile tile1x2 metroTeal">
+		<div id="tile2" contextType="weather" class="tile tile1x1 metroPurple">
 			<div class="tileContent">TEST</div>
 		</div>
 		
-		<div class="tile tile2x2 metroPurpleDark">
+		<div id="tile3" class="tile tile1x2 metroTeal">
+			<div class="tileContent">TEST</div>
+		</div>
+		
+		<div id="tile4" class="tile tile2x2 metroPurpleDark">
 			<div class="tileContent">TEST</div>
 		</div>
 	</div>
 		
 	<div class="tileColumn">
 		
-		<div class="tile tile1x2">
+		<div id="tile5" class="tile tile1x2">
 			<div class="tileContent">TEST</div>
 		</div>
 		
-		<div class="tile tile1x1 metroRed">
+		<div id="tile6" class="tile tile1x1 metroRed">
 			<div class="tileContent">TEST</div>
 		</div>
 		
-		<div class="tile tile2x2">
+		<div id="tile7" class="tile tile2x2">
 			<div class="tileContent">TEST</div>
 		</div>
 	</div>
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 	<script>
 	$("body").css("background-color","#2b5797");
+
+	function loadTile(tile) {
+		console.log("loadTile");
+		$(tile).find(".tileContent").text("Loading...");
+		var ctx = $(tile).attr('contextType');
+		if (typeof ctx !== typeof undefined && ctx !== false) {
+			switch(ctx) {
+				case 'reddit':
+					console.log('loading reddit tile');
+					break;
+				case 'weather':
+					console.log('loading weather tile');
+					break;
+				case 'image':
+					console.log('loading image tile');
+					break;
+				default: 
+					console.log('default');
+					break;
+			}
+		} else {console.log('attr not defined');}
+	}
 	
+	$("#tile1").bind('load',function(o) {
+		console.log("loading");
+		loadTile(o);
+	});
+
 	$(document).ready(function() {
 		$(".tile").each(function() {
-			loadTile(this);
+			$(this).trigger('load');
 		});
 	});
-	function loadTile(tile) {
-		$(tile).find(".tileContent").text("Loading...");
-	}
+	
+
 	</script>
 
 </body>
 </html>
+
+
+

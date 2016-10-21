@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dashboard Demo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>                        
+			</button>
+			<a class="navbar-brand" href="#">Dashboard Demo</a>
+		</div>
+		<div class="collapse navbar-collapse" id="mainNavbar">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Applications<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">App Project 1</a></li>
+						<li><a href="#">App Project 2</a></li>
+						<li><a href="#">App Project 3</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+			<li><a href="#"><div><span class="glyphicon glyphicon-envelope"></span> <span class="label label-primary">12</span></div></a></li>
+			<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+  
+<div class="container">
+	<div class="row">
+		
+		<div class="panel-group col-sm-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">Current Status</div>
+				<div class="panel-body">
+					<div><span style="width:80px;" class="badge alert-success">Healthy</span> Database Health</div>
+					<div><span style="width:80px;" class="badge alert-success">Healthy</span> Messaging Platform</div>
+					<div><span style="width:80px;" class="badge alert-danger">Failed</span> Build Status App 1 <small>Last success 2 hours ago</small></div>
+					<div><span style="width:80px;" class="badge alert-success">Healthy</span> Build Status App 2 <small>Last success 5 hours ago</small></div>
+					<div><span style="width:80px;" class="badge alert-success">Healthy</span> Build Status App 3 <small>Last success 5 minutes ago</small></div>
+				</div>
+				
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">About This Demo</div>
+				<div class="panel-body" style="padding:5px;">
+					
+						<p>This demo uses basic bootstrap to build a responsive UI demonstrating a team dashboard for a fictional development team.</p>
+						<p>Status indicators show general progress and health of related systems while a newsfeed
+							aggregates team and system activity
+						</p>
+						
+				</div>
+			</div>
+			
+			
+  		</div>
+		<div class="panel-group col-sm-6">
+			
+
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">Newsfeed</div>
+				<div class="panel-body">
+					<div class="well">
+						<div><strong>John:</strong> Bug 531 was committed to App 1 <small>(3 hours ago)</small></div>
+						<div><strong>Automated Message:</strong> App 1 build failed after recent commit #531 <small>(2 hours ago)</small></div>
+						<div><strong>John:</strong> Oops, sorry everyone. My last commit broke the build and I'm working on a fix<small>(1 hours ago)</small></div>	
+					</div>
+					
+					
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="input-group">
+						<input type="text" class="form-control" placeholder="Type a message...">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button">Send</button>
+						</span>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">Team Members</div>
+				<div class="panel-body">
+					<div class="input-group">
+
+						
+							<div class="" style="margin-bottom:3px;"> 
+								<a href="#" onclick="alert('Here we would use feature detection to launch tel: or callto:');">
+									<button type="button" class="btn btn-default btn-md" aria-label="Call"><span class="glyphicon glyphicon-earphone"></span></button>
+								</a> 
+								<a href="mailto:none@none.com"> 
+									<button type="button" class="btn btn-default btn-md" aria-label="Email"><span class="glyphicon glyphicon-envelope"></span></button>
+								</a> 
+								<img class="img-circle" src="http://placehold.it/50x50/ABCDEF">
+								<span class="">John S.</span> <small>(Junior Developer)</small> 
+								
+							</div> 
+							
+							<div class="" style="margin-bottom:3px;"> 
+								<a href="#" onclick="alert('Here we would use feature detection to launch tel: or callto:');">
+									<button type="button" class="btn btn-default btn-md" aria-label="Call"><span class="glyphicon glyphicon-earphone"></span></button>
+								</a> 
+								<a href="mailto:none@none.com"> 
+									<button type="button" class="btn btn-default btn-md" aria-label="Email"><span class="glyphicon glyphicon-envelope"></span></button>
+								</a> 
+								<img class="img-circle" src="http://placehold.it/50x50/FF9999">
+								<span class="">Amy H.</span> <small>(Senior Developer)</small>
+							</div> 
+							
+							<div class="" style="margin-bottom:3px;"> 
+								<a href="#" onclick="alert('Here we would use feature detection to launch tel: or callto:');">
+									<button type="button" class="btn btn-default btn-md" aria-label="Call"><span class="glyphicon glyphicon-earphone"></span></button>
+								</a> 
+								<a href="mailto:none@none.com"> 
+									<button type="button" class="btn btn-default btn-md" aria-label="Email"><span class="glyphicon glyphicon-envelope"></span></button>
+								</a> 
+								<img class="img-circle" src="http://placehold.it/50x50/99FF99">
+								<span class="">Sam H.</span> <small>(Team Lead)</small>
+							</div> 
+						
+				</div>
+			</div>
+  		</div>
+	</div>
+</div>
+
+</body>
+</html>
