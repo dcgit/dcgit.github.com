@@ -1,0 +1,3 @@
+The intent of this project will be to demonstrate using npm for project build and testing workflow
+
+We will include jslint, minification, and a simple test plan.
