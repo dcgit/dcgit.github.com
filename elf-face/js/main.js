@@ -197,9 +197,11 @@
         });
 
         ctx.drawImage(image, 
-		(rect.x + fixLeft) + 50, 
-		(rect.y - newHeight + fixTop) + 40, 
-		newWidth+30, newHeight);
+          //(rect.x + fixLeft) + 50, 
+          //(rect.y - newHeight + fixTop) + 40, 
+          (rect.x + fixLeft), 
+          (rect.y - newHeight + fixTop), 
+          newWidth+30, newHeight);
       });
     });
   }
