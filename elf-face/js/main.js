@@ -224,7 +224,7 @@
     });
 
     //try to dump a frame every 100ms
-    var interval = 100, ticks = 3500 / interval, lastFrameTime = Date.now();
+    var interval = 100, ticks = 1000 / interval, lastFrameTime = Date.now();
     var timer = setInterval(function () {
       ticks--;
       if (ticks <= 0) {
@@ -299,42 +299,6 @@
     }
   }
 
-  function step3() {
-    var clientId = '0be7cbc22f0ebb3';
-
-    $('#step3 blockquote p').text('Sending ...');
-
-    //we are converting blob to a base64 string
-    var reader = new window.FileReader();
-    reader.readAsDataURL(lastGif);
-    reader.onloadend = function () {
-      //sending data to Imgur
-      $.ajax({
-        url: 'https://api.imgur.com/3/image',
-        method: 'POST',
-        headers: {
-          Authorization: 'Client-ID ' + clientId,
-          Accept: 'application/json'
-        },
-        data: {
-          image: (reader.result).replace('data:image/gif;base64,', ''),
-          type: 'base64',
-          description: 'Created with http://kdzwinel.github.io/JS-face-tracking-demo/'
-        },
-        success: function (result) {
-          var id = result.data.id;
-          $('#step3 img').attr('src', 'https://imgur.com/' + id + '.gif');
-
-          var url = 'https://imgur.com/' + id;
-          $('#step3 blockquote p').html('Done! Your GIF is available here: <a href="' + url + '" target="_blank">' + url + "</a>");
-        },
-        error: function (xhr, type, message) {
-          showError('Upload failed! Error: "' + message + '".');
-        }
-      });
-    }
-  }
-
   /*********************************
    * UI Stuff
    *********************************/
@@ -372,7 +336,7 @@
   });
 
   $('#upload').click(function () {
-    step3();
+    alert("No Implemented");
     changeStep(3);
   });
 
