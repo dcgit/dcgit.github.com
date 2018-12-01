@@ -172,7 +172,7 @@
     trackingTask = tracking.track('#step1 video', tracker);
 
     tracker.on('track', function (event) {
-      //ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       flames = [];
 
       event.data.forEach(function (rect) {
