@@ -20,9 +20,9 @@
 
       img.onload = deferred.resolve;
       //img.src = "img/flame/" + i + ".png";
-	img.src = "img/elf.png";
+	    img.src = "img/elf.png";
 
-  overlayFrames.push(img);
+      overlayFrames.push(img);
       promises.push(deferred.promise());
     }
 
@@ -172,7 +172,7 @@
     trackingTask = tracking.track('#step1 video', tracker);
 
     tracker.on('track', function (event) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      //ctx.clearRect(0, 0, canvas.width, canvas.height);
       flames = [];
 
       event.data.forEach(function (rect) {
@@ -184,6 +184,7 @@
         var newHeight = newWidth / orgWidth * orgHeight;
         var fixTop = rect.height * 0.2;
         var fixLeft = -rect.width / 2;
+        //var image = overlayFrames[frameCount % overlayFrames.length];
         var image = overlayFrames[frameCount % overlayFrames.length];
 
         flames.push({
@@ -195,16 +196,14 @@
         });
 
         ctx.drawImage(image, 
-          //(rect.x + fixLeft) + 50, 
-          //(rect.y - newHeight + fixTop) + 40, 
           (rect.x + fixLeft), 
           (rect.y - newHeight + fixTop), 
-          //newWidth+30, newHeight);
           newWidth, newHeight);
       });
     });
   }
 
+  /* #region recording*/
   function startRecording() {
     var canvas = document.querySelector('#step1 canvas.hidden');
     var scaledWidth = 240, scaledHeight = Math.round((scaledWidth / pictureWidth) * pictureHeight);
@@ -225,7 +224,7 @@
     });
 
     //try to dump a frame every 100ms
-    var interval = 100, ticks = 1000 / interval, lastFrameTime = Date.now();
+    var interval = 100, ticks = 3500 / interval, lastFrameTime = Date.now();
     var timer = setInterval(function () {
       ticks--;
       if (ticks <= 0) {
@@ -261,6 +260,7 @@
     //show recording indicator
     $('#step1 figure').addClass('recording');
   }
+/* #endregion recording*/
 
   function step2() {
     var outputImg = $('#step2 figure img');
