@@ -9,8 +9,6 @@
 
   var pictureWidth = 240;
   var pictureHeight = 180;
-//var pictureWidth = 375;
-  //var pictureHeight = 275;
 
   //load all flame animation frames
   function loadImages() {
@@ -181,8 +179,8 @@
         frameCount++;
         var orgWidth = 256;
         var orgHeight = 256;
-//        var newWidth = (rect.width * 2);
-        var newWidth = (rect.width);
+        var newWidth = (rect.width * 2);
+        //var newWidth = (rect.width);
         var newHeight = newWidth / orgWidth * orgHeight;
         var fixTop = rect.height * 0.2;
         var fixLeft = -rect.width / 2;
@@ -201,7 +199,8 @@
           //(rect.y - newHeight + fixTop) + 40, 
           (rect.x + fixLeft), 
           (rect.y - newHeight + fixTop), 
-          newWidth+30, newHeight);
+          //newWidth+30, newHeight);
+          newWidth, newHeight);
       });
     });
   }
