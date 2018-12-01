@@ -4,7 +4,7 @@
   var trackingTask = null;
   var lastGif = null;
 
-  var flameFrames = [];
+  var overlayFrames = [];
   var flames = [];
 
   var pictureWidth = 240;
@@ -22,7 +22,7 @@
       //img.src = "img/flame/" + i + ".png";
 	img.src = "img/elf.png";
 
-      flameFrames.push(img);
+  overlayFrames.push(img);
       promises.push(deferred.promise());
     }
 
@@ -184,7 +184,7 @@
         var newHeight = newWidth / orgWidth * orgHeight;
         var fixTop = rect.height * 0.2;
         var fixLeft = -rect.width / 2;
-        var image = flameFrames[frameCount % flameFrames.length];
+        var image = overlayFrames[frameCount % overlayFrames.length];
 
         flames.push({
           image: image,
