@@ -176,6 +176,7 @@
       flames = [];
 
       event.data.forEach(function (rect) {
+	      console.log(rect);
         frameCount++;
         var orgWidth = 256;
         var orgHeight = 256;
