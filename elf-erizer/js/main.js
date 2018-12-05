@@ -197,8 +197,8 @@
         });
 
         ctx.drawImage(image, 
-          (rect.x + fixLeft), 
-          (rect.y - newHeight + fixTop), 
+          (rect.x), 
+          (rect.y - newHeight), 
           newWidth, newHeight);
       });
     });
