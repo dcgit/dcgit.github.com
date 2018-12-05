@@ -190,8 +190,8 @@
 
         flames.push({
           image: image,
-          x: (rect.x + fixLeft),
-          y: (rect.y - newHeight + fixTop),
+          x: (rect.x),
+          y: (rect.y - newHeight),
           width: newWidth,
           height: newHeight
         });
