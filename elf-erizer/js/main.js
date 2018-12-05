@@ -7,8 +7,8 @@
   var overlayFrames = [];
   var flames = [];
 
-  var pictureWidth = 240;
-  var pictureHeight = 180;
+  var pictureWidth = 480;
+  var pictureHeight = 360;
 
   //load all flame animation frames
   function loadImages() {
