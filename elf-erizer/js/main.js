@@ -155,7 +155,7 @@
 
   function setupTrackingJS() {
     var canvas = document.querySelector('#step1 canvas.visible');
-    var scaledWidth = 240, scaledHeight = Math.round((scaledWidth / pictureWidth) * pictureHeight);
+    var scaledWidth = 480, scaledHeight = Math.round((scaledWidth / pictureWidth) * pictureHeight);
     var frameCount = 0;
 
     //setup canvas
@@ -206,7 +206,7 @@
   /* #region recording*/
   function startRecording() {
     var canvas = document.querySelector('#step1 canvas.hidden');
-    var scaledWidth = 240, scaledHeight = Math.round((scaledWidth / pictureWidth) * pictureHeight);
+    var scaledWidth = 480, scaledHeight = Math.round((scaledWidth / pictureWidth) * pictureHeight);
 
     //setup canvas
     canvas.width = scaledWidth;
