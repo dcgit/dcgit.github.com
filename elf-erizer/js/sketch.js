@@ -82,7 +82,7 @@ function draw() {
 		//console.log("faceWidth:",faceWidth);
 
 		let noseEyeSpace = personMatches[0].nose.y - personMatches[0].leftEye.y;
-		console.log("NoseEyeSpace:", noseEyeSpace);
+		//console.log("NoseEyeSpace:", noseEyeSpace);
 		
 		let hatOffsetY = (noseEyeSpace * 2) + 30;
 
