@@ -1,3 +1,4 @@
+let isModelReady = false;
 let video;
 let poseNet;
 let personMatches = [];
@@ -61,11 +62,14 @@ function gotPoses(poses) {
 
 function modelReady() {
 	console.log("model ready");
+	isModelReady = true;
 }
 
 function draw() {
 	image(video, 0, 0);
-
+	textSize(50);
+	fill(0,255,0);
+	if (isModelReady) { text("Model ready",50,50); }
 
 	fill(220, 50, 50);
 
