@@ -2,9 +2,7 @@ let isModelReady = false;
 let video;
 let poseNet;
 let personMatches = [];
-let nose;
 let hat;
-let scaledHat;
 
 function setup() {
 	createCanvas(640, 480);
@@ -27,13 +25,12 @@ function gotPoses(poses) {
 
 		//foreach person in poses
 		let person = poses[0].pose;
-		nose = {
-			"x": person.keypoints[0].position.x,
-			"y": person.keypoints[0].position.y
-		};
-
+		
 		personMatches.push({
-			"nose": nose,
+			"nose": {
+				"x": person.keypoints[0].position.x,
+				"y": person.keypoints[0].position.y
+			},
 			"leftEye": {
 				"x": person.keypoints[1].position.x,
 				"y": person.keypoints[1].position.y
@@ -52,9 +49,6 @@ function gotPoses(poses) {
 			}
 
 		});
-	} else {
-		nose = null;
-		personMatches = [];
 	}
 
 
@@ -76,32 +70,28 @@ function draw() {
 	if (personMatches.length > 0) {
 
 
-		//console.log("LeftEar:",personMatches[0].leftEar.x);
-		//console.log("RightEar:",personMatches[0].rightEar.x);
-		let faceWidth = personMatches[0].leftEar.x - personMatches[0].rightEar.x
-		//console.log("faceWidth:",faceWidth);
+		personMatches.forEach(function(person,i) {
 
-		let noseEyeSpace = personMatches[0].nose.y - personMatches[0].leftEye.y;
-		//console.log("NoseEyeSpace:", noseEyeSpace);
+		let faceWidth = person.leftEar.x - person.rightEar.x
+		
+		let noseEyeSpace = person.nose.y - person.leftEye.y;
 		
 		let hatOffsetY = (noseEyeSpace * 2) + 30;
 
 		//rotation?
 		//rotate(cos(80));
 		image(hat, 
-					personMatches[0].nose.x - (faceWidth / 2), 
-					personMatches[0].nose.y - 140 - hatOffsetY, 
+					person.nose.x - (faceWidth / 2), 
+					person.nose.y - 140 - hatOffsetY, 
 					faceWidth + 30, 
 					160
 				 );
 
-		//restore canvas rotation
-		//rotate(-cos(80));
-		if (nose) {
+			//restore canvas rotation
+			//rotate(-cos(80));		
+  		let eyeSpacing = (person.rightEye.x - person.leftEye.x) * 0.7;
+			ellipse(person.nose.x, person.nose.y, eyeSpacing, eyeSpacing);
 
-			let eyeSpacing = (personMatches[0].rightEye.x - personMatches[0].leftEye.x) * 0.7;
-			ellipse(nose.x, nose.y, eyeSpacing, eyeSpacing);
-
-		}
+		});
 	}
 }
