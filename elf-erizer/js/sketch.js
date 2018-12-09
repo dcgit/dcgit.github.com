@@ -27,9 +27,9 @@ function gotPoses(poses) {
 		//foreach person in poses
 		
 		poses.forEach(function(personPose,i) {
-		//let person = poses[0].pose;
-		let person = personPose.pose;
-		personMatches.push({
+			//let person = poses[0].pose;
+			let person = personPose.pose;
+			personMatches.push({
 			"nose": {
 				"x": person.keypoints[0].position.x,
 				"y": person.keypoints[0].position.y
@@ -50,7 +50,7 @@ function gotPoses(poses) {
 				"x": person.keypoints[4].position.x,
 				"y": person.keypoints[4].position.y
 			}
-		});
+			});
 		});
 	}
 
@@ -71,10 +71,10 @@ function draw() {
 	fill(220, 50, 50);
 
 	if (personMatches.length > 0) {
-		console.log(personMatches);
+		//console.log(personMatches);
 
 		personMatches.forEach(function(person,i) {
-console.log("Person:" + i);
+		//console.log("Person:" + i);
 			console.log(person);
 		let faceWidth = person.leftEar.x - person.rightEar.x
 		
