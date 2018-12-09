@@ -19,7 +19,7 @@ function setup() {
 }
 
 function gotPoses(poses) {
-	//console.log(poses);
+	console.log(poses);
 	personMatches = [];
 	if (poses && poses.length > 0) {
 
