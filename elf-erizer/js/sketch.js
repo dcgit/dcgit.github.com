@@ -25,8 +25,10 @@ function gotPoses(poses) {
 	if (poses && poses.length > 0) {
 
 		//foreach person in poses
-		let person = poses[0].pose;
 		
+		poses.forEach(function(personPose,i) {
+		//let person = poses[0].pose;
+		let person = personPose.pose;
 		personMatches.push({
 			"nose": {
 				"x": person.keypoints[0].position.x,
