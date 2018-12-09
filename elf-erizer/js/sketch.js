@@ -18,6 +18,7 @@ function setup() {
 	poseNet.on("pose", gotPoses);
 }
 
+
 function gotPoses(poses) {
 	console.log(poses);
 	personMatches = [];
