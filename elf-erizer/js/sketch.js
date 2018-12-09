@@ -50,7 +50,7 @@ function gotPoses(poses) {
 				"x": person.keypoints[4].position.x,
 				"y": person.keypoints[4].position.y
 			}
-
+		});
 		});
 	}
 
