@@ -20,7 +20,7 @@ function setup() {
 
 
 function gotPoses(poses) {
-	console.log(poses);
+	//console.log(poses);
 	personMatches = [];
 	if (poses && poses.length > 0) {
 
@@ -69,10 +69,11 @@ function draw() {
 	fill(220, 50, 50);
 
 	if (personMatches.length > 0) {
-
+		console.log(personMatches);
 
 		personMatches.forEach(function(person,i) {
-
+console.log("Person:" + i);
+			console.log(person);
 		let faceWidth = person.leftEar.x - person.rightEar.x
 		
 		let noseEyeSpace = person.nose.y - person.leftEye.y;
