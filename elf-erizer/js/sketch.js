@@ -15,8 +15,8 @@ let canvasHeight = Math.floor(window.innerHeight * 0.75);
 function setup() {
 	createCanvas(canvasWidth, canvasHeight+200);
 	video = createCapture(VIDEO);
-	video.size(canvasWidth,canvasHeight);
-	//video.hide();
+	//video.size(canvasWidth,canvasHeight);
+	video.hide();
 	poseNet = ml5.poseNet(video, modelReady);
 	loadImage('https://dcgit.github.io/elf-erizer/img/hat.gif', function(imgData) {
 		console.log('image loaded');
@@ -91,7 +91,7 @@ function easing(oldVal, newVal) {
 }
 
 function draw() {
-	image(video, 0, 0);
+	image(video, 0, 0, canvasWidth, canvasHeight);
 	textSize(50);
 	fill(0,255,0);
 	if (isModelReady) { text("Model ready",50,50); }
