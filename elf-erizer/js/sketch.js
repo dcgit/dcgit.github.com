@@ -89,6 +89,7 @@ function modelReady() {
 }
 
 function easing(oldVal, newVal) {
+	console.log("Easing is on");
 	let easingRate = 0.2;
 	return newVal - ((newVal - oldVal) * easingRate);
 }
@@ -129,7 +130,7 @@ function draw() {
 		let newX = person.nose.x - (faceWidth / 2) + manualOffsetX;
 		let newY = person.nose.y - 140 - hatDepthOffsetY + manualOffsetY;
 			
-		if (lastX && lastY && easingCheckbox.checked()) {
+		if (lastX && lastY && easingCheckbox.checked()===true) {
 			newX = easing(lastX, newX);
 			newY = easing(lastY, newY);
 		}
