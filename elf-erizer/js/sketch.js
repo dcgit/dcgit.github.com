@@ -15,8 +15,8 @@ let canvasWidth = Math.floor(canvasHeight * 1.33); //4:3 ration
 let btnScreenshot;
 
 
-function saveScreenshot()
-	var dt = new Date();
+function saveScreenshot() {
+	let dt = new Date();
 
 	save('screenshot' + dt.getTime() + '.jpg');
 }
