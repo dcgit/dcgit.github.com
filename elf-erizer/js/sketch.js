@@ -110,7 +110,7 @@ function modelReady() {
 
 function easing(oldVal, newVal) {
 	console.log("Easing is on");
-	let smoothingRate = 0.9;
+	let smoothingRate = 0.5;
 	return newVal - ((newVal - oldVal) * smoothingRate);
 }
 
