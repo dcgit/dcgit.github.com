@@ -16,7 +16,7 @@ let canvasWidth = Math.floor(canvasHeight * 1.33); //4:3 ration
 function setup() {
 	createCanvas(canvasWidth, canvasHeight+200);
 	video = createCapture(VIDEO);
-	video.size(canvasWidth,canvasHeight);
+	video.size(canvasWidth, canvasHeight);
 	video.hide();
 	poseNet = ml5.poseNet(video, modelReady);
 	loadImage('https://dcgit.github.io/elf-erizer/img/hat.gif', function(imgData) {
@@ -129,9 +129,9 @@ function draw() {
 		let newX = person.nose.x - (faceWidth / 2) + manualOffsetX;
 		let newY = person.nose.y - 140 - hatDepthOffsetY + manualOffsetY;
 			
-		if (lastX && lastY) {
-			//newX = easing(lastX, newX);
-			//newY = easing(lastY, newY);
+		if (lastX && lastY && easingCheckbox.checked()) {
+			newX = easing(lastX, newX);
+			newY = easing(lastY, newY);
 		}
 		lastX = newX;
 		lastY = newY;
