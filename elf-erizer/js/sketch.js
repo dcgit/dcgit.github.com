@@ -96,7 +96,7 @@ function easing(oldVal, newVal) {
 }
 
 function draw() {
-	
+	background(250);
 	image(video, 0, 0, canvasWidth, canvasHeight);
 	textSize(50);
 	fill(200,200,0);
@@ -114,7 +114,7 @@ function draw() {
 
 		personMatches.forEach(function(person,i) {
 		//console.log("Person:" + i);
-		console.log(person);
+		//console.log(person);
 		let faceWidth = person.leftEar.x - person.rightEar.x
 		
 		let noseEyeSpace = person.nose.y - person.leftEye.y;
@@ -123,7 +123,7 @@ function draw() {
 
 		//rotation?
 		//rotate(cos(80));
-		console.log(hatDepthOffsetY);
+		
 			
 		//let newX = person.nose.x - (faceWidth / 2) + manualOffsetX;
 		//let newY = person.nose.y - 140 - hatDepthOffsetY + manualOffsetY;
@@ -139,10 +139,10 @@ function draw() {
 		lastY = newY;
 			
 		image(hat, 
-			newX, 
+			newX-10, 
 			newY, 
 			faceWidth + 30, 
-			160
+			200
 		 );
 
 			//restore canvas rotation
