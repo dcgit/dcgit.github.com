@@ -148,7 +148,7 @@ function draw() {
 		//let newY = person.nose.y - 140 - hatDepthOffsetY + manualOffsetY;
 			
 		let newX = person.nose.x - 10 - (faceWidth / 2) + manualOffsetX;
-		let newY = person.nose.y - 170 - hatDepthOffsetY + manualOffsetY;
+		let newY = person.nose.y - 160 - hatDepthOffsetY + manualOffsetY;
 			
 		if (lastX && lastY && easingCheckbox.checked()===true) {
 			newX = easing(lastX, newX);
@@ -161,7 +161,7 @@ function draw() {
 			newX-10, 
 			newY, 
 			faceWidth + 30, 
-			140
+			200
 		 );
 
 			//restore canvas rotation
