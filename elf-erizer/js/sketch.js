@@ -9,8 +9,9 @@ let lastX, lastY;
 let hatOffsetX, hatOffsetY;
 let easingCheckbox;
 
-let canvasWidth = Math.floor(window.innerWidth * 0.75);
 let canvasHeight = Math.floor(window.innerHeight * 0.75);
+let canvasWidth = Math.floor(canvasWidth * 1.33); //4:3 ration
+
 
 function setup() {
 	createCanvas(canvasWidth, canvasHeight+200);
