@@ -9,11 +9,12 @@ let lastX, lastY;
 let hatOffsetX, hatOffsetY;
 let easingCheckbox;
 
-let canvasHeight = Math.floor(window.innerHeight * 0.75);
+let canvasHeight = Math.floor(window.innerHeight * 0.50);
 let canvasWidth = Math.floor(canvasHeight * 1.33); //4:3 ration
 
 
 function setup() {
+	background(250);
 	createCanvas(canvasWidth, canvasHeight+200);
 	video = createCapture(VIDEO);
 	video.size(canvasWidth, canvasHeight);
@@ -90,12 +91,12 @@ function modelReady() {
 
 function easing(oldVal, newVal) {
 	console.log("Easing is on");
-	let easingRate = 0.2;
-	return newVal - ((newVal - oldVal) * easingRate);
+	let smoothingRate = 0.9;
+	return newVal - ((newVal - oldVal) * smoothingRate);
 }
 
 function draw() {
-	background(250);
+	
 	image(video, 0, 0, canvasWidth, canvasHeight);
 	textSize(50);
 	fill(200,200,0);
