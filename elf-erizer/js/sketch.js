@@ -10,7 +10,7 @@ let hatOffsetX, hatOffsetY;
 let easingCheckbox;
 
 let canvasHeight = Math.floor(window.innerHeight * 0.75);
-let canvasWidth = Math.floor(canvasWidth * 1.33); //4:3 ration
+let canvasWidth = Math.floor(canvasHeight * 1.33); //4:3 ration
 
 
 function setup() {
