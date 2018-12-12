@@ -49,6 +49,7 @@ function gotPoses(poses) {
 		poses.forEach(function(personPose,i) {
 			//let person = poses[0].pose;
 			let person = personPose.pose;
+			console.log(person);
 			personMatches.push({
 			"nose": {
 				"x": person.keypoints[0].position.x,
