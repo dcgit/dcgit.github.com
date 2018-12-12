@@ -97,8 +97,10 @@ function draw() {
 	background(240);
 	image(video, 0, 0, canvasWidth, canvasHeight);
 	textSize(50);
+	fill(200,200,0);
+	if (!isModelReady) { text("Loading facial recognition.",50,canvasHeight); }
 	fill(0,255,0);
-	if (isModelReady) { text("Model ready",50,50); }
+	if (isModelReady) { text("Model ready",50,canvasHeight); }
 
 	let manualOffsetX = hatOffsetX.value();
 	let manualOffsetY = hatOffsetY.value();
@@ -151,6 +153,7 @@ function draw() {
 	
 	
 	//refinement controls
+	textSize(16);
 	text("Offset X", 0, canvasHeight + 20);
 	text("Offset Y", 0, canvasHeight + 50);
 	
