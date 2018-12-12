@@ -161,7 +161,7 @@ function draw() {
 			newX-10, 
 			newY, 
 			faceWidth + 30, 
-			140
+			150
 		 );
 
 			//restore canvas rotation
