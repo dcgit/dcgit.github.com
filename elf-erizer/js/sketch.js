@@ -135,7 +135,7 @@ function draw() {
 		//let newY = person.nose.y - 140 - hatDepthOffsetY + manualOffsetY;
 			
 		let newX = person.nose.x - (faceWidth / 2) + manualOffsetX;
-		let newY = person.nose.y - 140 - hatDepthOffsetY + manualOffsetY;
+		let newY = person.nose.y - 170 - hatDepthOffsetY + manualOffsetY;
 			
 		if (lastX && lastY && easingCheckbox.checked()===true) {
 			newX = easing(lastX, newX);
