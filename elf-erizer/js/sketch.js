@@ -120,8 +120,8 @@ function draw() {
 		let newX = person.nose.x - (faceWidth / 2) + manualOffsetX;
 		let newY = person.nose.y - 140 - hatDepthOffsetY + manualOffsetY;
 		if (lastX && lastY) {
-			newX = easing(lastX, newX);
-			newY = easing(lastY, newY);
+			//newX = easing(lastX, newX);
+			//newY = easing(lastY, newY);
 		}
 		lastX = newX;
 		lastY = newY;
