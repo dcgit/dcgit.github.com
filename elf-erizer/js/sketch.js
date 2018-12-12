@@ -148,7 +148,7 @@ function draw() {
 		//let newY = person.nose.y - 140 - hatDepthOffsetY + manualOffsetY;
 			
 		let newX = person.nose.x - 10 - (faceWidth / 2) + manualOffsetX;
-		let newY = person.nose.y - 140 - hatDepthOffsetY + manualOffsetY;
+		let newY = person.nose.y - 120 - hatDepthOffsetY + manualOffsetY;
 			
 		if (lastX && lastY && easingCheckbox.checked()===true) {
 			newX = easing(lastX, newX);
@@ -165,9 +165,10 @@ function draw() {
 		 );
 
 			//restore canvas rotation
-			//rotate(-cos(80));		
+			//rotate(-cos(80));	
+		fill(200,0,0); 
   		let eyeSpacing = (person.rightEye.x - person.leftEye.x) * 0.7;
-  		ellipse(person.nose.x, person.nose.y, eyeSpacing, eyeSpacing);
+  		ellipse(person.nose.x-10, person.nose.y, eyeSpacing, eyeSpacing);
 
 		});
 	}
