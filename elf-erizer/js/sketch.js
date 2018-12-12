@@ -105,7 +105,7 @@ function draw() {
 
 		personMatches.forEach(function(person,i) {
 		//console.log("Person:" + i);
-			console.log(person);
+		console.log(person);
 		let faceWidth = person.leftEar.x - person.rightEar.x
 		
 		let noseEyeSpace = person.nose.y - person.leftEye.y;
@@ -122,6 +122,8 @@ function draw() {
 			newX = easing(lastX, newX);
 			newY = easing(lastY, newY);
 		}
+		lastX = newX;
+		lastY = newY;
 			
 		image(hat, 
 			newX, 
@@ -133,7 +135,7 @@ function draw() {
 			//restore canvas rotation
 			//rotate(-cos(80));		
   		let eyeSpacing = (person.rightEye.x - person.leftEye.x) * 0.7;
-			ellipse(person.nose.x, person.nose.y, eyeSpacing, eyeSpacing);
+  		ellipse(person.nose.x, person.nose.y, eyeSpacing, eyeSpacing);
 
 		});
 	}
