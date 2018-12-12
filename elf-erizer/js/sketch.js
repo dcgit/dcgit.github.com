@@ -23,7 +23,7 @@ function saveScreenshot() {
 
 function setup() {
 	background(250);
-	createCanvas(canvasWidth, canvasHeight+200);
+	createCanvas(canvasWidth, canvasHeight);
 	video = createCapture(VIDEO);
 	video.size(canvasWidth, canvasHeight);
 	video.hide();
