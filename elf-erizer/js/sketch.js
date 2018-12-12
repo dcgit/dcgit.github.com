@@ -4,6 +4,8 @@ let poseNet;
 let personMatches = [];
 let hat;
 
+let lastX, lastY;
+
 let hatOffsetX, hatOffsetY;
 
 function setup() {
@@ -63,6 +65,11 @@ function gotPoses(poses) {
 			});
 		});
 	}
+	else
+	{
+		lastX = null;
+		lastY = null;
+	}
 
 
 }
@@ -70,6 +77,11 @@ function gotPoses(poses) {
 function modelReady() {
 	console.log("model ready");
 	isModelReady = true;
+}
+
+function easing(oldVal, newVal) {
+	let easingRate = 0.2;
+	return newVal - ((newVal - oldVal) * easingRate);
 }
 
 function draw() {
@@ -99,9 +111,16 @@ function draw() {
 		//rotate(cos(80));
 		console.log(hatDepthOffsetY);
 			
+		let newX = person.nose.x - (faceWidth / 2) + manualOffsetX;
+		let newY = person.nose.y - 140 - hatDepthOffsetY + manualOffsetY;
+		if (lastX && lastY) {
+			newX = easing(lastX, newX);
+			newY = easing(lastY, newY);
+		}
+			
 		image(hat, 
-			person.nose.x - (faceWidth / 2) + manualOffsetX, 
-			person.nose.y - 140 - hatDepthOffsetY + manualOffsetY, 
+			newX, 
+			newY, 
 			faceWidth + 30, 
 			160
 		 );
