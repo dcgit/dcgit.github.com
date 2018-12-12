@@ -17,7 +17,7 @@ function setup() {
 	createCanvas(canvasWidth, canvasHeight+200);
 	video = createCapture(VIDEO);
 	video.size(canvasWidth, canvasHeight);
-	//video.hide();
+	video.hide();
 	poseNet = ml5.poseNet(video, modelReady);
 	loadImage('https://dcgit.github.io/elf-erizer/img/hat.gif', function(imgData) {
 		console.log('image loaded');
@@ -49,7 +49,7 @@ function gotPoses(poses) {
 		poses.forEach(function(personPose,i) {
 			//let person = poses[0].pose;
 			let person = personPose.pose;
-			console.log(person);
+			//console.log(person);
 			personMatches.push({
 			"nose": {
 				"x": person.keypoints[0].position.x,
@@ -156,5 +156,5 @@ function draw() {
 	textSize(16);
 	text("Offset X", 0, canvasHeight + 20);
 	text("Offset Y", 0, canvasHeight + 50);
-	
+	console.log(frameRate());
 }
