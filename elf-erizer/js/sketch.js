@@ -110,7 +110,7 @@ function draw() {
 	if (isModelReady) { fill(0,255,0); text("Model ready",50,canvasHeight + 50); }
 		else { fill(200,200,0); text("Loading facial recognition.",50,canvasHeight + 50); }
 	
-	fill(255,0,0); 
+	fill(240,0,0); 
 	
 	let manualOffsetX = hatOffsetX.value();
 	let manualOffsetY = hatOffsetY.value();
