@@ -4,6 +4,8 @@ let poseNet;
 let personMatches = [];
 let hat;
 
+let hatOffsetX, hatOffsetY;
+
 function setup() {
 	createCanvas(640, 480);
 	video = createCapture(VIDEO);
@@ -16,6 +18,14 @@ function setup() {
 	});
 
 	poseNet.on("pose", gotPoses);
+	
+	text("Offset X", 0, 50);
+	hatOffsetX = createSlider(-100, 100, 0, 1);
+	hatOffsetX.position(20, 20);
+	
+	hatOffsetY = createSlider(-100, 100, 0, 1);
+	hatOffsetY.position(20, 50);
+	
 }
 
 
@@ -68,6 +78,9 @@ function draw() {
 	fill(0,255,0);
 	if (isModelReady) { text("Model ready",50,50); }
 
+	let manualOffsetX = hatOffsetX.value();
+	let manualOffsetY = hatOffsetY.value();
+	
 	fill(220, 50, 50);
 
 	if (personMatches.length > 0) {
@@ -80,16 +93,18 @@ function draw() {
 		
 		let noseEyeSpace = person.nose.y - person.leftEye.y;
 		
-		let hatOffsetY = (noseEyeSpace * 2) + 30;
+		let hatDepthOffsetY = (noseEyeSpace * 2) + 30;
 
 		//rotation?
 		//rotate(cos(80));
+		console.log(hatDepthOffsetY);
+			
 		image(hat, 
-					person.nose.x - (faceWidth / 2), 
-					person.nose.y - 140 - hatOffsetY, 
-					faceWidth + 30, 
-					160
-				 );
+			person.nose.x - (faceWidth / 2) + manualOffsetX, 
+			person.nose.y - 140 - hatDepthOffsetY + manualOffsetY, 
+			faceWidth + 30, 
+			160
+		 );
 
 			//restore canvas rotation
 			//rotate(-cos(80));		
