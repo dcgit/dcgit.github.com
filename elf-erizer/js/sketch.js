@@ -93,6 +93,7 @@ function easing(oldVal, newVal) {
 }
 
 function draw() {
+	background();
 	image(video, 0, 0, canvasWidth, canvasHeight);
 	textSize(50);
 	fill(0,255,0);
