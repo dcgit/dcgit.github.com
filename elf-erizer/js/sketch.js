@@ -105,16 +105,14 @@ function draw() {
 	background(250);
 	image(video, 0, 0, canvasWidth, canvasHeight);
 	textSize(50);
-	fill(200,200,0);
-	if (!isModelReady) { text("Loading facial recognition.",50,canvasHeight); }
-	fill(0,255,0);
-	if (isModelReady) { text("Model ready",50,canvasHeight); }
-
+	
+	
+	if (isModelReady) { fill(0,255,0); text("Model ready",50,canvasHeight); }
+		else { fill(200,200,0); text("Loading facial recognition.",50,canvasHeight); }
+	
 	let manualOffsetX = hatOffsetX.value();
 	let manualOffsetY = hatOffsetY.value();
 	
-	fill(220, 50, 50);
-
 	if (personMatches.length > 0) {
 		//console.log(personMatches);
 
@@ -134,7 +132,7 @@ function draw() {
 		//let newX = person.nose.x - (faceWidth / 2) + manualOffsetX;
 		//let newY = person.nose.y - 140 - hatDepthOffsetY + manualOffsetY;
 			
-		let newX = person.nose.x - (faceWidth / 2) + manualOffsetX;
+		let newX = person.nose.x - 10 - (faceWidth / 2) + manualOffsetX;
 		let newY = person.nose.y - 170 - hatDepthOffsetY + manualOffsetY;
 			
 		if (lastX && lastY && easingCheckbox.checked()===true) {
@@ -161,5 +159,5 @@ function draw() {
 	
 	
 	
-	console.log(frameRate());
+	//console.log(frameRate());
 }
