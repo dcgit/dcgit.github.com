@@ -37,6 +37,12 @@ function setup() {
 	
 	easingCheckbox = createCheckbox('Turn on easing', false);
 	easingCheckbox.position(20, canvasHeight + 80);
+	
+	//refinement controls
+	textSize(16);
+	text("Offset X", 0, canvasHeight + 20);
+	text("Offset Y", 0, canvasHeight + 50);
+	
 }
 
 
@@ -154,9 +160,6 @@ function draw() {
 	}
 	
 	
-	//refinement controls
-	textSize(16);
-	text("Offset X", 0, canvasHeight + 20);
-	text("Offset Y", 0, canvasHeight + 50);
+	
 	console.log(frameRate());
 }
