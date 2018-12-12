@@ -7,9 +7,13 @@ let hat;
 let lastX, lastY;
 
 let hatOffsetX, hatOffsetY;
+let easingCheckbox;
+
+let canvasWidth = Math.floor(window.innerWidth * 0.75);
+let canvasWidth = Math.floor(window.innerHeight * 0.75);
 
 function setup() {
-	createCanvas(640, 480);
+	createCanvas(canvasWidth, canvasHeight);
 	video = createCapture(VIDEO);
 	video.hide();
 	poseNet = ml5.poseNet(video, modelReady);
@@ -28,6 +32,7 @@ function setup() {
 	hatOffsetY = createSlider(-100, 100, 0, 1);
 	hatOffsetY.position(20, 50);
 	
+	easingCheckbox = createCheckbox('Turn on easing', false);
 }
 
 
