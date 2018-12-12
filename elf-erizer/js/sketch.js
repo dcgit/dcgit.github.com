@@ -12,6 +12,14 @@ let easingCheckbox;
 let canvasHeight = Math.floor(window.innerHeight * 0.50);
 let canvasWidth = Math.floor(canvasHeight * 1.33); //4:3 ration
 
+let btnScreenshot;
+
+
+function saveScreenshot()
+	var dt = new Date();
+
+	save('screenshot' + dt.getTime() + '.jpg');
+}
 
 function setup() {
 	background(250);
@@ -20,6 +28,7 @@ function setup() {
 	video.size(canvasWidth, canvasHeight);
 	video.hide();
 	poseNet = ml5.poseNet(video, modelReady);
+	
 	loadImage('https://dcgit.github.io/elf-erizer/img/hat.gif', function(imgData) {
 		console.log('image loaded');
 		hat = imgData;
@@ -28,6 +37,10 @@ function setup() {
 
 	poseNet.on("pose", gotPoses);
 	
+	
+btnScreenshot = createButton('Save Picture');
+btnScreenshot.position((window.innerHeight/2) - (canvasWidth/2));
+btnScreenshot.mousePressed(saveScreenshot);
 	
 	hatOffsetX = createSlider(-100, 100, 0, 1);
 	hatOffsetX.position(20, canvasHeight + 20);
