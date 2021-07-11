@@ -102,7 +102,7 @@
 
     getUserMedia(videoSettings, function (stream) {
       //Setup the video stream
-      video.src = window.URL.createObjectURL(stream);
+      video.srcObject = stream;
 
       window.stream = stream;
 
